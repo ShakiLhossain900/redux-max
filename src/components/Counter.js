@@ -30,5 +30,4 @@ const Counter = () => {
 };
 
 export default Counter;
-//i have to re check the logic and the code
-//than go for the next
+// class base components i never used 012 redux with class based components
