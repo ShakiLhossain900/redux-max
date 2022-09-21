@@ -30,3 +30,4 @@ const Counter = () => {
 };
 
 export default Counter;
+//i have to re check the logic and the code
