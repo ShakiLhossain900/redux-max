@@ -1,10 +1,10 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 //redux toolkit
-const initialCounterState = { counter: 0, showCounter: true,  };
+const initialCounterState = { counter: 0, showCounter: true };
 const counterSlice = createSlice({
   name: "counter", //name of createSlice
-  initialState:initialCounterState,
+  initialState: initialCounterState,
   reducers: {
     //this is reducer object
     increment(state) {
@@ -13,37 +13,37 @@ const counterSlice = createSlice({
     decrement(state) {
       state.counter--;
     }, //method //ai method golote acction bola lage na agolo automatically bole dey kon action hocce
-    increase(state,action) {
+    increase(state, action) {
       state.counter = state.counter + action.payload;
     }, //method
     toggleCounter(state) {
       state.showCounter = !state.showCounter;
-    }, 
+    },
   },
 });
 
 const initialAuthnState = {
   isAuthenticated: false,
-}
+};
 
 const authSlice = createSlice({
-name:'authentication',
-initialState:initialAuthnState,
-reducers: {
-  login(state) {
-    state.isAuthenticated= true;
+  name: "authentication",
+  initialState: initialAuthnState,
+  reducers: {
+    login(state) {
+      state.isAuthenticated = true;
+    },
+    logout(state) {
+      state.isAuthenticated = false;
+    },
   },
-  logout(state) {
-    state.isAuthenticated= false;
-  },
-}
-})
+});
 
-
-//redux toolkit automatic create the aciton to dispatch aciton 
+//redux toolkit automatic create the aciton to dispatch aciton
 const store = configureStore({
-  reducer:{
-    counter:counterSlice.reducer, auth:authSlice.reducer
+  reducer: {
+    counter: counterSlice.reducer,
+    auth: authSlice.reducer,
   },
   //reducer:{counter: counterSlice.reducer}   //map of the reducer or object system y pass kora jabe
 });
@@ -51,6 +51,43 @@ const store = configureStore({
 export const counterActions = counterSlice.actions;
 export const authActions = authSlice.actions;
 export default store;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

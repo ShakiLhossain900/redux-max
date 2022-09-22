@@ -5,11 +5,11 @@ import {counterActions} from "../store/index";
 const Counter = () => {
   const dispatch = useDispatch();
 
-  const counter = useSelector((state) => state.counter); //resive the state manage by redux
+  const counter = useSelector((state) => state.counter.counter); //resive the state manage by redux
   //it's retuen the redux state
  
   //i want to get  the value of show counter
-  const show = useSelector((state) => state.showCounter);
+  const show = useSelector((state) => state.counter.showCounter);
 
   const incremnetHandler = () => {
     //dispatch({ type: "increment" });   //this dispatch for normal redux
@@ -17,7 +17,7 @@ const Counter = () => {
   };
   const increseHandler = () => {
     // dispatch({ type: "increase", amount: 5 });
-    dispatch(counterActions.increase(10))   //{type: some_uniquw_identifier, payload:10}
+    dispatch(counterActions.increase(5))   //{type: some_uniquw_identifier, payload:10}
 
   };
   const decrementHandler = () => {
