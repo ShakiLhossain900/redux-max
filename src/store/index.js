@@ -1,10 +1,10 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 //redux toolkit
-const initialState = { counter: 0, showCounter: true };
+const initialCounterState = { counter: 0, showCounter: true,  };
 const counterSlice = createSlice({
   name: "counter", //name of createSlice
-  initialState,
+  initialState:initialCounterState,
   reducers: {
     //this is reducer object
     increment(state) {
@@ -22,17 +22,43 @@ const counterSlice = createSlice({
   },
 });
 
-//redux toolkit automatic create the aciton to dispatch aciton 
+const initialAuthnState = {
+  isAuthenticated: false,
+}
 
-
-const store = configureStore({
-  reducer:counterSlice.reducer
-  //here we have one reducer that's why ata dorkar nai we can directly assign
-  //reducer:{counter: counterSlice.reducer}   //map of the reducer or object system y pass kora jabe
+const authSlice = createSlice({
+name:'authentication',
+initialState:initialAuthnState,
+reducers: {
+  login(state) {
+    state.isAuthenticated= true;
+  },
+  logout(state) {
+    state.isAuthenticated= false;
+  },
+}
 })
 
+
+//redux toolkit automatic create the aciton to dispatch aciton 
+const store = configureStore({
+  reducer:{
+    counter:counterSlice.reducer, auth:authSlice.reducer
+  },
+  //reducer:{counter: counterSlice.reducer}   //map of the reducer or object system y pass kora jabe
+});
+
 export const counterActions = counterSlice.actions;
+export const authActions = authSlice.actions;
 export default store;
+
+
+
+
+
+
+
+
 
 
 
