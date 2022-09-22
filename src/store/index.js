@@ -1,5 +1,4 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
-import { createStore } from "redux";
 
 //redux toolkit
 const initialState = { counter: 0, showCounter: true };
@@ -15,7 +14,7 @@ const counterSlice = createSlice({
       state.counter--;
     }, //method //ai method golote acction bola lage na agolo automatically bole dey kon action hocce
     increase(state,action) {
-      state.counter = state.counter + action.amount;
+      state.counter = state.counter + action.payload;
     }, //method
     toggleCounter(state) {
       state.showCounter = !state.showCounter;
