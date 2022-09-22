@@ -1,6 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-//redux toolkit
+//redux toolkit counter
 const initialCounterState = { counter: 0, showCounter: true };
 const counterSlice = createSlice({
   name: "counter", //name of createSlice
@@ -22,6 +22,9 @@ const counterSlice = createSlice({
   },
 });
 
+
+
+//redux toolkit authentication 
 const initialAuthnState = {
   isAuthenticated: false,
 };
