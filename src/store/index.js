@@ -23,12 +23,16 @@ const counterSlice = createSlice({
   },
 });
 
+//redux toolkit automatic create the aciton to dispatch aciton 
+
+
 const store = configureStore({
   reducer:counterSlice.reducer
   //here we have one reducer that's why ata dorkar nai we can directly assign
   //reducer:{counter: counterSlice.reducer}   //map of the reducer or object system y pass kora jabe
 })
 
+export const counterActions = counterSlice.actions;
 export default store;
 
 
