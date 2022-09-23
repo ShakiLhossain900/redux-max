@@ -43,6 +43,7 @@ const Counter = () => {
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
     </main>
+    
   );
 };
 
