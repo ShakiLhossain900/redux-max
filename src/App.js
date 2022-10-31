@@ -20,4 +20,4 @@ function App() {
 export default App;
 
 
-//i have another practice project with that 
+//also done one practice project my own practice
